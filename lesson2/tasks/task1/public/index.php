@@ -34,7 +34,7 @@ echo "</pre>";
 
 // $product->getOne(15);
 //$product->getAll();
-$tovar1 = new ShtuchTovar(new Db());
+$tovar1 = new ShtuchTovar(new Db()); // Почему не работает
 
 echo "<pre>";
 var_dump($tovar1);
