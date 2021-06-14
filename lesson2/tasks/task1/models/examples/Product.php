@@ -1,7 +1,7 @@
 <?php
-namespace app\models;
+namespace app\models\examples;
 
-abstract class Tovar extends Model
+abstract class Product
 {
     public $id;
     public $name;
@@ -10,17 +10,17 @@ abstract class Tovar extends Model
     abstract protected function getPrice();
 
     public function __construct(
-        $id = '',
+        $id = null,
         $name = '', 
-        $price = 0)
+        $price = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->price = $price;
     }
 
-        protected function getTableName()
-    {
-        return 'tovar';
-    }
+    //     protected function getTableName()
+    // {
+    //     return 'tovar';
+    // }
 }

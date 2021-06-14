@@ -1,7 +1,7 @@
 <?php
-namespace app\models;
+namespace app\models\examples;
 
-class DigitalTovar extends Tovar
+class VesTovar extends Product
 {
     public $id;
     public $name;
@@ -10,11 +10,11 @@ class DigitalTovar extends Tovar
     public $allPrice;
 
     public function __construct(
-         $id = '',
+         $id = null,
          $name = '', 
-         $price = 0, 
-         $count = 0, 
-         $allPrice = 0)
+         $price = null, 
+         $count = null, 
+         $allPrice = null)
     {
         parent::__construct(
              $id, 
@@ -31,6 +31,14 @@ class DigitalTovar extends Tovar
     }
 
     protected function getPrice() {
-         return $this->allPrice = $this->$price * $this->$count / 2;
+         if($this->count >= 1000) {
+          return $this->allPrice = $this->price * $this->count / 0.9;
+         }
+         return $this->allPrice = $this->price * $this->count;
+    }
+
+    public function showAllPrice() {
+        $this->getPrice();
+        return round($this->allPrice, 2);
     }
 }

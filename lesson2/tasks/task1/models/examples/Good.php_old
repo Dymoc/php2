@@ -1,17 +1,17 @@
 <?php
-namespace app\models;
+namespace app\models\examples;
 
-class Good extends Model
+class Good
 {
     public $tovars;
     public $allPrice;
     public $allCount;
 
     public function __construct(
-        $tovars=[], 
-        $allPrice=0, 
-        $allCount=0)
-    {        
+        $tovars=null, 
+        $allPrice=null, 
+        $allCount=null)
+    {
         $this->tovars = $tovars;
         $this->allPrice = $allPrice;
         $this->allCount = $allCount;

@@ -1,63 +1,45 @@
 <?php
 
 use app\interfaces\IModel;
-use app\models\{Product, User, Good, Tovar, ShtuchTovar};
+use app\models\{ 
+     User};
+use app\models\Product as Tovar; // Необходимо для правильного идентифицирования, инче ругается на дубль
 use app\engine\Db;
+
+use app\models\examples\{
+     Good, 
+     Product, 
+     ShtuchTovar,
+     DigitalTovar,
+     VesTovar
+     };
 
 include "../engine/Autoload.php";
 
 spl_autoload_register([new Autoload(), 'loadClass']);
 
 
-// $banan = new Tovar(1,"banan", 150, 1000);
-// $mango = new Tovar(2,"mango", 550, 750);
-// $banjo = new Tovar(3,"banjo", 1300, 50);
-$tovar = new ShtuchTovar(1,"banan", 150, 1000);
+$sTovar = new ShtuchTovar(1,"CD", 150, 1000);
 echo "<pre>";
-var_dump($tovar);
+var_dump($sTovar);
+var_dump($sTovar->showAllPrice());
 echo "</pre>";
 
-// $tovar->insert($tovar);
-// $goods = new app\models\Good;
-// $goods->addTovars($banan);
-// $goods->addTovars($mango);
-// $goods->addTovars($banjo);
 
-// $goods->getAllPrice();
-// $goods->getAllCount();
-
-// echo "<pre>";
-// var_dump($goods);
-// echo "</pre>";
-
-
-
-// $product->getOne(15);
-//$product->getAll();
-$tovar1 = new ShtuchTovar(new Db());
+$dTovar = new DigitalTovar(2, 'notebook', 15000, 15);
 
 echo "<pre>";
-var_dump($tovar1);
+var_dump($dTovar);
+var_dump($dTovar->showAllPrice());
 echo "</pre>";
 
-$user = new User(new Db());
+
+$vTovar = new VesTovar(3, 'banan', 150, 1000);
 
 echo "<pre>";
-var_dump($user);
+var_dump($vTovar);
+var_dump($vTovar->showAllPrice());
 echo "</pre>";
-
-$user->getOne(2);
-$user->getAll();
-$user->insert($tovar);
-
-
-// function foo(IModel $model) {
-//     $model->getAll();
-// }
-
-
-// var_dump($product);
-
 
 
 

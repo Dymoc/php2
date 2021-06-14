@@ -29,22 +29,6 @@ abstract class Model implements IModel
     }
 
     public function insert($values) {
-        // $sql = "INSERT * INTO {$this->getTableName()} VALUES {$values}";
-
-        $sql = "INSERT INTO `{$this->getTableName()}`(
-                `id`, 
-                `bank`, 
-                `caption`, 
-                `template`, 
-                `templateDataParams`) 
-                VALUES (
-                    [value-1],
-                    [value-2],
-                    [value-3],
-                    [value-4],
-                    [value-5])";
-
-        echo $this->db->insert($sql);
 
     }
 
