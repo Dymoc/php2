@@ -21,8 +21,9 @@ echo "<pre>";
 
 
 $user = new User;
-$user->getOne(4)->delete();
-// $user->delete();
+$user = $user->getOne(3);
+var_dump($user);
+$user->delete();
 
 // $category = new Category('Продукты');
 // $category->insert();

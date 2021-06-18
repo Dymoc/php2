@@ -12,12 +12,12 @@ abstract class Model implements IModel
     abstract protected function getTableName();
 
 
-    public function getOne($id) {
+    public function getArray($id) {
         $sql = "SELECT * FROM {$this->getTableName()} WHERE id = :id";
         return DB::getInstance()->queryOne($sql, ['id' => $id]);
     }
 
-    public function getObject($id) {
+    public function getOne($id) {
         $sql = "SELECT * FROM {$this->getTableName()} WHERE id = :id";
 
         return DB::getInstance()->queryOneObject($sql, ['id' => $id], get_called_class());
@@ -79,6 +79,7 @@ abstract class Model implements IModel
 
     public function delete() {
         $sql = "DELETE FROM {$this->getTableName()} WHERE id = :id";
+        var_dump($this->id);
         return DB::getInstance()->queryOne($sql, ['id' => $this->id]);
 
         return $this;
