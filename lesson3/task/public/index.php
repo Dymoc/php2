@@ -20,10 +20,10 @@ echo "<pre>";
 // var_dump($product->insert());
 
 
-$user = new User;
-$user = $user->getOne(3);
-var_dump($user);
-$user->delete();
+// $user = new User;
+// $user = $user->getOne(3);
+// var_dump($user);
+// $user->delete();
 
 // $category = new Category('Продукты');
 // $category->insert();
@@ -31,12 +31,12 @@ $user->delete();
 // $order = new Order(2, 'Не оплачено');
 // var_dump($order->insert());
 
-// $product = new Product;
-// var_dump($product->getOne(1));
-// var_dump($product);
-// $product->price=6000000;
-// var_dump($product);
-// $product->update();
+$product = new Product;
+$product = $product->getOne(1);
+var_dump($product);
+$product->price=6000000;
+var_dump($product);
+$product->update();
 
 
 
