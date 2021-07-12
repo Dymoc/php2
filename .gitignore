@@ -1,0 +1,8 @@
+# Default ignored files
+
+*.zip
+/lesson1/rpg/
+/lesson1/no_engine/
+
+*/material/
+*/*/vendor/
